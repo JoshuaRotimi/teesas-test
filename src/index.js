@@ -6,10 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import categoryReducer from "./store/Categories";
+import authReducer from "./store/Auth";
 
 const store = configureStore({
   reducer: {
     category: categoryReducer,
+    auth: authReducer,
   },
 });
 

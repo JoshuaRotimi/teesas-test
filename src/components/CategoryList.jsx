@@ -53,7 +53,7 @@ const CategoryList = ({ category }) => {
             />
             <button
               className={
-                "rounded-sm bg-green-400 p-2 text-white hover:bg-green-500"
+                "rounded-sm bg-green-400 p-2 text-white hover:bg-green-500 transition-all"
               }
             >
               Save
@@ -61,20 +61,22 @@ const CategoryList = ({ category }) => {
           </form>
         ) : (
           <h2 className={"text-xl font-semibold"}>
-            {category.id}. {category.name}
+            Category Name: {category.name}
           </h2>
         )}
         <div className={"flex space-x-3"}>
           <button
             className={
-              "rounded-sm bg-blue-400 p-2 text-white hover:bg-blue-500"
+              "rounded-sm bg-blue-400 p-2 text-white hover:bg-blue-500 transition-all"
             }
             onClick={() => setRenameCat(!renameCat)}
           >
             {!renameCat ? "Edit" : "Cancel"}
           </button>
           <button
-            className={"rounded-sm bg-red-400 p-2 text-white hover:bg-red-500"}
+            className={
+              "rounded-sm bg-red-400 p-2 text-white hover:bg-red-500 transition-all"
+            }
             onClick={() => handleDelete()}
           >
             Delete
@@ -95,7 +97,7 @@ const CategoryList = ({ category }) => {
           />
           <button
             className={
-              "rounded-sm bg-green-400 p-2 text-white hover:bg-green-500"
+              "rounded-sm bg-green-400 p-2 text-white hover:bg-green-500 transition-all"
             }
             type={"submit"}
           >

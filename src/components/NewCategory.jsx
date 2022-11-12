@@ -33,7 +33,7 @@ const NewCategory = () => {
           onChange={(e) => setCategoryName(e.target.value)}
         />
         <button
-          className={"rounded-full bg-blue-400 p-2 text-white"}
+          className={"rounded-full bg-blue-400 p-2 text-white transition-all"}
           type={"submit"}
         >
           Add Category

@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../store/Auth";
 
 const Auth = () => {
   const [newUser, setNewUser] = useState(false);
@@ -7,6 +9,7 @@ const Auth = () => {
   const [message, setMessage] = useState("");
   const [details, setDetails] = useState({ username: "", password: "" });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setDetails({
@@ -32,6 +35,7 @@ const Auth = () => {
       ) {
         setError("Wrong username or password.");
       } else {
+        dispatch(loginUser({ loggedIn: true }));
         navigate("/home");
       }
     }
@@ -73,7 +77,9 @@ const Auth = () => {
         </div>
         <button
           type={"submit"}
-          className={"rounded-sm bg-blue-400 p-2 text-white hover:bg-blue-500"}
+          className={
+            "rounded-sm bg-blue-400 p-2 text-white transition-all hover:bg-blue-500"
+          }
           onClick={(e) => login(e)}
         >
           {newUser ? "Register" : "Login"}
