@@ -12,7 +12,7 @@ const NewCategory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!categoryName) return;
+    if (!categoryName.trim()) return;
     dispatch(addCategory({ name: categoryName, id: newId, lists: [] }));
     setCategoryName("");
   };

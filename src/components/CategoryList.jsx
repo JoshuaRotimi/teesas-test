@@ -15,7 +15,7 @@ const CategoryList = ({ category }) => {
 
   const addItem = (e) => {
     e.preventDefault();
-    if (!addPick) return;
+    if (!addPick.trim()) return;
     if (category.lists.length > 0 && category.lists.indexOf(addPick) !== -1)
       return;
     dispatch(addCategoryItem({ id: category.id, pick: addPick }));
@@ -41,6 +41,7 @@ const CategoryList = ({ category }) => {
         "rounded-md mx-auto p-3 max-w-[500px] space-y-4 my-10 flex flex-col justify-center " +
         "border border-gray-300 bg-white shadow-sm hover:border hover:border-gray-600"
       }
+      data-testid={"categoryType"}
     >
       <div className={"flex justify-between"}>
         {renameCat ? (
